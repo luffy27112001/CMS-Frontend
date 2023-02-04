@@ -220,11 +220,11 @@ const UpdateCourse = () => {
             </div>
 
             {/* <span>{course.modules.length}</span> */}
-            {course.modules && course.modules.map((module) => {
+            {/* {course.modules && course.modules.map((module) => {
               <ModuleCard module={module}/>
-            })}
+            })} */}
 
-            {/* <ModuleCard module="Module 1"/> */}
+            <ModuleCard/>
 
             <div className="w-full flex flex-col justify-center items-center my-7">
               <button

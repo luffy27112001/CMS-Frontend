@@ -73,20 +73,27 @@ const Navbar = () => {
               />
               {/* <SearchIcon className='relative right-2 top-0.5 hover:cursor-pointer' onClick={searchFunctionality}/> */}
             </form>
-            <Link to="/courses" className="text-white text-3xl hover:underline">
+            <Link to="/courses" className="text-white text-2xl hover:underline">
               Courses
             </Link>
             <div className="flex justify-around items-center w-1/4 text-xl">
-              <Link
+              {/* <Link
                 to="/cart"
                 className="bg-white w-24 flex justify-evenly items-center px-5 py-1 hover:bg-slate-100 hover:cursor-pointer"
               >
                 <ShoppingCartIcon className="relative right-1" />
                 <button>Cart</button>
+              </Link> */}
+              
+              {isAuthenticated && (
+                <Link to="/mycourses" className="text-white text-2xl hover:underline mr-5">
+                My Courses
               </Link>
+              )}
+
               {isAuthenticated && (
                 <div className="relative w-56 flex justify-around items-center">
-                  <h2 className="text-white text-3xl">
+                  <h2 className="text-white text-2xl">
                     Hi {user.name.split(" ")[0]}!
                   </h2>
                   <AccountCircleIcon

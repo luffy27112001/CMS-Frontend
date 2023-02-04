@@ -28,6 +28,7 @@ import {
 } from "../../constants/courseConstants";
 import { enrolledCourse } from "../../actions/userAction";
 import AllReviews from "./AllReviews";
+import VideoPlayer from "./VideoPlayer";
 
 const CourseProgress = () => {
   const dispatch = useDispatch();
@@ -188,6 +189,7 @@ const CourseProgress = () => {
                   <span className="text-xl">Video 1</span>
                   <div>
                     <span className="text-xl">07:33 - </span>
+                    <VideoPlayer/>
                     <Link to="" className="hover:text-blue-500 text-xl">
                       Play Video
                     </Link>
