@@ -245,7 +245,7 @@ export const createCourseModule = (courseData, id) => async(dispatch) => {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     const { data } = await axios.post(
-      `/api/v1/adminNprof/modules/${id}`,
+      `/api/v1/adminNprof/modules/new/${id}`,
       courseData,
       config
     );
