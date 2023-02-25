@@ -28,6 +28,7 @@ import CreateCourse from "./components/Course/CreateCourse";
 import UpdateCourse from "./components/Course/UpdateCourse";
 import AllReviews from "./components/Course/AllReviews";
 // import MyOrders from "./components/Order/MyOrders";
+import { ChakraProvider } from '@chakra-ui/react'
 
 const stripePromise = loadStripe("pk_test_51LYvuKSHCpKtVEuaZVfr8GWBfUq72V6Kz3ymqZgm7Q1yHphCT82LXzW6OLd6RUHMziQ6hU6Yw60lBol5ZsSGJfs900K2XxbDvd");
 
@@ -49,6 +50,7 @@ function App() {
   }, []);
 
   return (
+    // <ChakraProvider>
     <Router>
       <Navbar />
       {/* <Elements stripe={stripePromise}>
@@ -85,6 +87,7 @@ function App() {
         <Route exact path="/cart" element={<Cart />} />
       </Routes>
     </Router>
+    // </ChakraProvider>
   );
 }
 

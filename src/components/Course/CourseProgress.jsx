@@ -12,11 +12,8 @@ import MetaData from "../layout/MetaData";
 import { useAlert } from "react-alert";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import AttachmentIcon from "@mui/icons-material/Attachment";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
+import TextField from "@mui/material/TextField";    
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -29,7 +26,7 @@ import {
 import { enrolledCourse } from "../../actions/userAction";
 import AllReviews from "./AllReviews";
 import VideoPlayer from "./VideoPlayer";
-
+import ModuleList from "./Modules/ModuleList";
 const CourseProgress = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -48,7 +45,234 @@ const CourseProgress = () => {
   // const { isEnrolled, error: enrollError } = useSelector(
   //   (state) => state.enrollCourse
   // );
-
+    let courses = [
+      { 
+        Module : 'Module 1',
+        Videos : {
+          noOfVideos : 2,
+          videoLinks : [
+            {
+              title : 'Title 1',
+              link : 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
+            },
+            {
+              title : 'Title 2',
+              link : 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
+            },
+          ],
+        },
+        quizdata :  {
+          numberofquests : 5,
+          timelimit : 600000,
+          question : [
+          {
+            questionText: 'What is the capital of France?',
+            answerOptions: [
+              { answerText: 'New York', isCorrect: false },
+              { answerText: 'London', isCorrect: false },
+              { answerText: 'Paris', isCorrect: true },
+              { answerText: 'Dublin', isCorrect: false },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'Who is CEO of Tesla?',
+            answerOptions: [
+              { answerText: 'Jeff Bezos', isCorrect: false },
+              { answerText: 'Elon Musk', isCorrect: true },
+              { answerText: 'Bill Gates', isCorrect: false },
+              { answerText: 'Tony Stark', isCorrect: false },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'The iPhone was created by which company?',
+            answerOptions: [
+              { answerText: 'Apple', isCorrect: true },
+              { answerText: 'Intel', isCorrect: false },
+              { answerText: 'Amazon', isCorrect: false },
+              { answerText: 'Microsoft', isCorrect: false },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 1?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 2?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 3?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 4?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+          },
+          {
+            questionText: 'How many Harry Potter books are there 5?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+          },
+          {
+            questionText: 'How many Harry Potter books are there 6?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+          },
+        ],
+      },
+      },
+      { 
+        Module : 'Module 2',
+        Videos : {
+          noOfVideos : 4,
+          videoLinks : [
+            {
+              title : 'Title 1',
+              link : 'Link 1',
+            },
+            {
+              title : 'Title 2',
+              link : 'Link 2',
+            },
+            {
+              title : 'Title 3',
+              link : 'Link 3',
+            },
+            {
+              title : 'Title 4',
+              link : 'Link 4',
+            },
+          ],
+        },
+        quizdata :  {
+          numberofquests : 5,
+          timelimit : 600000,
+          question : [
+          {
+            questionText: 'What is the capital of France?',
+            answerOptions: [
+              { answerText: 'New York', isCorrect: false },
+              { answerText: 'London', isCorrect: false },
+              { answerText: 'Paris', isCorrect: true },
+              { answerText: 'Dublin', isCorrect: false },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'Who is CEO of Tesla?',
+            answerOptions: [
+              { answerText: 'Jeff Bezos', isCorrect: false },
+              { answerText: 'Elon Musk', isCorrect: true },
+              { answerText: 'Bill Gates', isCorrect: false },
+              { answerText: 'Tony Stark', isCorrect: false },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'The iPhone was created by which company?',
+            answerOptions: [
+              { answerText: 'Apple', isCorrect: true },
+              { answerText: 'Intel', isCorrect: false },
+              { answerText: 'Amazon', isCorrect: false },
+              { answerText: 'Microsoft', isCorrect: false },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 1?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 2?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 3?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+            timetaken : 0 ,
+          },
+          {
+            questionText: 'How many Harry Potter books are there 4?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+          },
+          {
+            questionText: 'How many Harry Potter books are there 5?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+          },
+          {
+            questionText: 'How many Harry Potter books are there 6?',
+            answerOptions: [
+              { answerText: '1', isCorrect: false },
+              { answerText: '4', isCorrect: false },
+              { answerText: '6', isCorrect: false },
+              { answerText: '7', isCorrect: true },
+            ],
+          },
+        ],
+      },
+    },
+    ]
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -63,22 +287,6 @@ const CourseProgress = () => {
 //     precision: 0.5,
 //     size: "large",
 //   };
-
-  const extend = () => {
-    Array.from(document.getElementsByClassName("dropdown")).forEach((e, i) => {
-      e.addEventListener("click", () => {
-        if (
-          document.getElementById(`ext_drop_${i}`).classList.contains("hidden")
-        ) {
-          document.getElementById(`ext_drop_${i}`).classList.remove("hidden");
-          e.classList.add("rotate-180");
-        } else {
-          document.getElementById(`ext_drop_${i}`).classList.add("hidden");
-          e.classList.remove("rotate-180");
-        }
-      });
-    });
-  };
 
   // const addToCartHandler = () => {
   //   dispatch(addItemsToCart(id));
@@ -162,201 +370,7 @@ const CourseProgress = () => {
             <div className="w-2/5 h-0.5 bg-slate-500"></div>
           </div>
 
-          <div className="bg-slate-100 flex justify-center flex-col items-center">
-            <div className="mx-24 bg-blue-300 px-10 py-3 w-5/6 flex flex-col justify-center mt-5 rounded-lg">
-              <div className="flex justify-between items-center">
-                <div className="">
-                  <span className="text-3xl font-semibold">Module 1</span>
-                  <div className="flex mt-2 items-center">
-                    <div className="flex items-center">
-                      <PlayCircleOutlineIcon />
-                      <span className="ml-1">3 Videos</span>
-                    </div>
-                    <div className="flex items-center">
-                      <AttachmentIcon className="ml-3" />
-                      <span className="ml-1">1 Assignment</span>
-                    </div>
-                  </div>
-                </div>
-                <KeyboardArrowDownIcon
-                  fontSize="large"
-                  className="hover:cursor-pointer dropdown"
-                  onClick={extend}
-                />
-              </div>
-              <div className="hidden mt-5" id="ext_drop_0">
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 1</span>
-                  <div>
-                    <span className="text-xl">07:33 - </span>
-                    <VideoPlayer/>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 2</span>
-                  <div>
-                    <span className="text-xl">10:09 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 3</span>
-                  <div>
-                    <span className="text-xl">02:57 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex items-center py-3 justify-between">
-                  <div className="flex items-center">
-                    <AttachmentIcon className="" />
-                    <span className="text-xl ml-1">Assignment</span>
-                  </div>
-                  <div>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Attempt Now
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-slate-100 flex justify-center flex-col items-center">
-            <div className="mx-24 bg-blue-300 px-10 py-3 w-5/6 flex flex-col justify-center mt-5 rounded-lg">
-              <div className="flex justify-between items-center">
-                <div className="">
-                  <span className="text-3xl font-semibold">Module 2</span>
-                  <div className="flex mt-2 items-center">
-                    <div className="flex items-center">
-                      <PlayCircleOutlineIcon />
-                      <span className="ml-1">3 Videos</span>
-                    </div>
-                    <div className="flex items-center">
-                      <AttachmentIcon className="ml-3" />
-                      <span className="ml-1">1 Assignment</span>
-                    </div>
-                  </div>
-                </div>
-                <KeyboardArrowDownIcon
-                  fontSize="large"
-                  className="hover:cursor-pointer dropdown"
-                  onClick={extend}
-                />
-              </div>
-              <div className="hidden mt-5" id="ext_drop_1">
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 1</span>
-                  <div>
-                    <span className="text-xl">07:33 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 2</span>
-                  <div>
-                    <span className="text-xl">10:09 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 3</span>
-                  <div>
-                    <span className="text-xl">02:57 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex items-center py-3 justify-between">
-                  <div className="flex items-center">
-                    <AttachmentIcon className="" />
-                    <span className="text-xl ml-1">Assignment</span>
-                  </div>
-                  <div>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Attempt Now
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-slate-100 flex justify-center flex-col items-center">
-            <div className="mx-24 bg-blue-300 px-10 py-3 w-5/6 flex flex-col justify-center my-5 rounded-lg">
-              <div className="flex justify-between items-center">
-                <div className="">
-                  <span className="text-3xl font-semibold">Module 3</span>
-                  <div className="flex mt-2 items-center">
-                    <div className="flex items-center">
-                      <PlayCircleOutlineIcon />
-                      <span className="ml-1">3 Videos</span>
-                    </div>
-                    <div className="flex items-center">
-                      <AttachmentIcon className="ml-3" />
-                      <span className="ml-1">1 Assignment</span>
-                    </div>
-                  </div>
-                </div>
-                <KeyboardArrowDownIcon
-                  fontSize="large"
-                  className="hover:cursor-pointer dropdown"
-                  onClick={extend}
-                />
-              </div>
-              <div className="hidden mt-5" id="ext_drop_2">
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 1</span>
-                  <div>
-                    <span className="text-xl">07:33 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 2</span>
-                  <div>
-                    <span className="text-xl">10:09 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex justify-between py-3">
-                  <span className="text-xl">Video 3</span>
-                  <div>
-                    <span className="text-xl">02:57 - </span>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Play Video
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t-2 border-black flex items-center py-3 justify-between">
-                  <div className="flex items-center">
-                    <AttachmentIcon className="" />
-                    <span className="text-xl ml-1">Assignment</span>
-                  </div>
-                  <div>
-                    <Link to="" className="hover:text-blue-500 text-xl">
-                      Attempt Now
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ModuleList courses = { courses}></ModuleList>
 
           <div className="flex justify-center items-center my-10">
             <div className="w-2/5 h-0.5 bg-slate-500"></div>
